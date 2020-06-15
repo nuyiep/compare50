@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <cs50.h> 
+
+int get_positive_int(void);
+
+int main(void)
+{
+    // declare int
+    int i, x, y, z;
+    
+    // prompt user for input
+    i = get_positive_int();
+    
+    for (x = 1; x <= i; x++)
+    { 
+        
+        // draw the space for right aligned pyramid
+        for (z = 1; z <= (i - x); z++)
+        { 
+            printf(" ");
+        }
+        
+        // draw the hashes
+        for (y = 1; y <= x; y++)
+        {
+            printf("#");
+        }
+        printf("\n");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// define int get_positive_int and prompt input
+int get_positive_int(void)
+{
+    int n;
+    do
+    {
+        n = get_int("%s", "Height: ");
+    }
+    while (n < 1 || n > 8);
+    return n;
+}
